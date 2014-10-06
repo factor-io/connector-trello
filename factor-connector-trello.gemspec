@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email         = ['jozwright@gmail.com', 'andrewrdakers@gmail.com']
   s.homepage      = 'https://factor.io'
   s.summary       = 'Trello Factor.io Connector'
-  s.files         = ['lib/factor/connector/trello.rb']
+  s.files         = ['lib/factor/connector/trello_cards.rb']
   
   s.require_paths = ['lib']
 
