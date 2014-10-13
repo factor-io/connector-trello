@@ -1,18 +1,12 @@
 require "codeclimate-test-reporter"
 require 'rspec'
 require 'wrong'
+require 'factor-connector-api/test'
 
-CodeClimate::TestReporter.start
+CodeClimate::TestReporter.start if ENV['CODECLIMATE_REPO_TOKEN']
 
 Dir.glob('./lib/factor/connector/*.rb').each { |f| require f }
 
-module ServiceContext
-  def service_instance(service_name)
-    Factor::Connector.get_service_manager(service_name).instance
-  end
-end
-
 RSpec.configure do |c|
-  c.include Wrong
-  c.include ServiceContext
+  c.include Factor::Connector::Test
 end
