@@ -1,19 +1,19 @@
 require 'factor-connector-api'
 require 'trello'
 
-Factor::Connector.service 'trello_cards' do
-  action 'create_card' do |params|
+Factor::Connector.service 'trello_lists' do
+  action 'create_list' do |params|
 
-    list_id = params['list_id']
+    board_id = params['board_id']
     name = params['name']
     api_key = params['api_key']
     auth_token = params['auth_token']
 
-    fail 'List identification is required' unless list_id
-    fail 'A card name is required' unless name
+    fail 'Board identification is required' unless board_id
+    fail 'A list name is required' unless name
 
     content = {
-      list_id: list_id,
+      board_id: board_id,
       name: name
     }
 
@@ -27,13 +27,13 @@ Factor::Connector.service 'trello_cards' do
       fail 'Authentication invalid'
     end
 
-    info 'Creating new card'
+    info 'Creating new list'
     begin
-      card = Trello::Card.create(content)
+      list = Trello::List.create(content)
     rescue
-      'Failed to create card'
+      'Failed to create list'
     end
 
-    action_callback card
+    action_callback list
   end
 end

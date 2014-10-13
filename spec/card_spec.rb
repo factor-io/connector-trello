@@ -15,7 +15,7 @@ describe 'trello_cards' do
       'name' => name
     }
 
-    service_instance.test_action('create', params) do
+    service_instance.test_action('create_card', params) do
       expect_info message: 'Initializing connection to Trello'
       expect_info message: 'Creating new card'
       expect_return
