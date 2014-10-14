@@ -59,7 +59,7 @@ Factor::Connector.service 'trello_members' do
       else
         board.add_member(member)
         card.add_member(member)
-      end
+      endr
     rescue
       'Failed to add member'
     end
