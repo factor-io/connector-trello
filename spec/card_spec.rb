@@ -22,7 +22,9 @@ describe 'trello_cards' do
 
     params = {
       'list_id' => list_id,
-      'name' => name
+      'name' => name,
+      'auth_token' => auth_token,
+      'api_key' => api_key
     }
 
     service_instance.test_action('create_card', params) do
@@ -40,11 +42,14 @@ describe 'trello_cards' do
 
     service_instance = service_instance('trello_cards')
 
-    params = { 'card_id' => card_id }
+    params = {
+      'card_id' => card_id,
+      'auth_token' => auth_token,
+      'api_key' => api_key
+    }
 
     service_instance.test_action('find_card', params) do
       expect_info message: 'Initializing connection to Trello'
-      expect_info message: 'Finding card'
       expect_return
     end
   end

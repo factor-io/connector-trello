@@ -1,5 +1,6 @@
 require 'factor-connector-api'
 require 'trello'
+require 'pry'
 
 Factor::Connector.service 'trello_cards' do
   action 'create_card' do |params|

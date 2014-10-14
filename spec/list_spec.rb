@@ -12,7 +12,9 @@ describe 'trello_lists' do
 
     params = {
       'board_id' => board_id,
-      'name' => name
+      'name' => name,
+      'auth_token' => auth_token,
+      'api_key' => api_key
     }
 
     service_instance.test_action('create_list', params) do
