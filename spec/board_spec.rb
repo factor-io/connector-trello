@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'trello_lists' do
+describe 'trello_boards' do
   before do
     Trello.configure do |config|
       config.developer_public_key = ENV['TRELLO_API_KEY']
