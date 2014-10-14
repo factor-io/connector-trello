@@ -36,4 +36,32 @@ Factor::Connector.service 'trello_lists' do
 
     action_callback list
   end
+
+  action 'find_list' do |params|
+
+    list_id = params['list_id']
+    api_key = params['api_key']
+    auth_token = params['auth_token']
+
+    fail 'List identification is required' unless list_id
+
+    info 'Initializing connection to Trello'
+    begin
+      Trello.configure do |config|
+        config.developer_public_key = api_key
+        config.member_token = auth_token
+      end
+    rescue
+      fail 'Authentication invalid'
+    end
+
+    info 'Retrieving list information'
+    begin
+      list = Trello::List.find(list_id)
+    rescue
+      fail 'Failed to find specified list'
+    end
+
+    action_callback list
+  end
 end
