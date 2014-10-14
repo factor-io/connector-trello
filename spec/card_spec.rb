@@ -6,9 +6,9 @@ describe 'trello_cards' do
       config.developer_public_key = ENV['TRELLO_API_KEY']
       config.member_token = ENV['TRELLO_AUTH_TOKEN']
     end
-    @board = Trello::Board.create(name: 'test')
-    @list = Trello::List.create(board_id: @board.id, name: '123')
-    @card = Trello::Card.create(list_id: @list.id, name: '1')
+    @board = Trello::Board.create(name: 'testing')
+    @list = Trello::List.create(board_id: @board.id, name: '456')
+    @card = Trello::Card.create(list_id: @list.id, name: '4')
   end
 
   it 'can create a card' do
