@@ -21,7 +21,7 @@ describe 'trello_lists' do
     api_key = ENV['TRELLO_API_KEY']
     auth_token = ENV['TRELLO_AUTH_TOKEN']
     board_id = @board.id
-    name = 'FooFoo'
+    name = 'Foo Foo'
 
     service_instance = service_instance('trello_lists')
 
