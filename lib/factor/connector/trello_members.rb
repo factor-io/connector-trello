@@ -10,7 +10,7 @@ Factor::Connector.service 'trello_members' do
     api_key = params['api_key']
     auth_token = params['auth_token']
 
-    fail 'A member ID, card ID or board ID is required' if !member_id && !card_id && !board_id
+    fail 'A member ID, card ID or board ID is required' unless member_id || card_id || board_id
 
     info 'Initializing connection to Trello'
     begin
