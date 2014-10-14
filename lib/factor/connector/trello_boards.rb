@@ -29,4 +29,31 @@ Factor::Connector.service 'trello_boards' do
 
     action_callback board
   end
+  action 'find_board' do |params|
+
+    board_id = params['board_id']
+    api_key = params['api_key']
+    auth_token = params['auth_token']
+
+    fail 'A board board ID is required' unless board_id
+
+    info 'Initializing connection to Trello'
+    begin
+      Trello.configure do |config|
+        config.developer_public_key = api_key
+        config.member_token = auth_token
+      end
+    rescue
+      fail 'Authentication invalid'
+    end
+
+    info 'Finding board'
+    begin
+      board = Trello::Board.find(board_id)
+    rescue
+      'Failed to find board'
+    end
+
+    action_callback board
+  end
 end
