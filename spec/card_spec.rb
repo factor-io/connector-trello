@@ -8,11 +8,13 @@ describe 'trello_cards' do
     end
     @board = Trello::Board.create(name: 'Test Board')
     @list = Trello::List.create(board_id: @board.id, name: 'Test List')
+    @list_two = Trello::List.create(board_id: @board.id, name: 'Test List Two')
     @card = Trello::Card.create(list_id: @list.id, name: 'Test Card')
   end
 
   after do
     @list.close
+    @list_two.close
     @card.close
   end
 
@@ -56,6 +58,29 @@ describe 'trello_cards' do
     service_instance.test_action('find_card', params) do
       expect_info message: 'Initializing connection to Trello'
       expect_info message: 'Finding card'
+      expect_return
+    end
+  end
+
+  it 'can move a card from one list to another' do
+
+    api_key = ENV['TRELLO_API_KEY']
+    auth_token = ENV['TRELLO_AUTH_TOKEN']
+    card_id = @card.id
+    list_two_id = @list_two.id
+
+    service_instance = service_instance('trello_cards')
+
+    params = {
+      'card_id' => card_id,
+      'list_two_id' => list_two_id,
+      'auth_token' => auth_token,
+      'api_key' => api_key
+    }
+
+    service_instance.test_action('move_card', params) do
+      expect_info message: 'Initializing connection to Trello'
+      expect_info message: 'Moving card'
       expect_return
     end
   end

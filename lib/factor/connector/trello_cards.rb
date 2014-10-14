@@ -37,6 +37,7 @@ Factor::Connector.service 'trello_cards' do
 
     action_callback card
   end
+
   action 'find_card' do |params|
 
     card_id = params['card_id']
@@ -63,5 +64,35 @@ Factor::Connector.service 'trello_cards' do
     end
 
     action_callback card
+  end
+  action 'move_card' do |params|
+
+    card_id = params['card_id']
+    list_two_id = params['list_two_id']
+    api_key = params['api_key']
+    auth_token = params['auth_token']
+
+    fail 'Card identification is required' unless card_id
+    fail 'List identification is required' unless list_two_id
+
+    info 'Initializing connection to Trello'
+    begin
+      Trello.configure do |config|
+        config.developer_public_key = api_key
+        config.member_token = auth_token
+      end
+    rescue
+      fail 'Authentication invalid'
+    end
+
+    info 'Moving card'
+    begin
+      card = Trello::Card.find(card_id)
+      moved_card = card.move_to_list(list_two_id)
+    rescue
+      fail 'Failed to move card'
+    end
+
+    action_callback moved_card
   end
 end
