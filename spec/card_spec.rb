@@ -90,4 +90,25 @@ describe 'trello_cards' do
       expect_return
     end
   end
+
+  it 'can delete a card' do
+
+    api_key = ENV['TRELLO_API_KEY']
+    auth_token = ENV['TRELLO_AUTH_TOKEN']
+    card_id = @card.id
+
+    service_instance = service_instance('trello_cards')
+
+    params = {
+      'card_id' => card_id,
+      'auth_token' => auth_token,
+      'api_key' => api_key
+    }
+
+    service_instance.test_action('delete_card', params) do
+      expect_info message: 'Initializing connection to Trello'
+      expect_info message: 'Deleting card'
+      expect_return
+    end
+  end
 end
