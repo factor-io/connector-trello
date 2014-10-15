@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 10.3.2'
   s.add_development_dependency 'wrong', '~> 0.7.1'
   s.add_development_dependency 'ruby-trello', '~> 1.1.1'
+  s.add_development_dependency 'rest-client', '~> 1.6.7'
 end

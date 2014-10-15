@@ -2,6 +2,7 @@ require "codeclimate-test-reporter"
 require 'rspec'
 require 'wrong'
 require 'factor-connector-api/test'
+require 'rest-client'
 
 CodeClimate::TestReporter.start if ENV['CODECLIMATE_REPO_TOKEN']
 
@@ -22,6 +23,7 @@ RSpec.configure do |c|
   end
 
   c.after do
+    RestClient.put("https://trello.com/1/boards/#{@board.id}/closed?key=#{ENV['TRELLO_API_KEY']}&token=#{ENV['TRELLO_AUTH_TOKEN']}",value:true)
     @list.close
     @list_two.close
     @card.close

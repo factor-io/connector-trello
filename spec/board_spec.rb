@@ -6,7 +6,7 @@ describe 'Trello' do
 
       api_key = ENV['TRELLO_API_KEY']
       auth_token = ENV['TRELLO_AUTH_TOKEN']
-      name = 'Roo'
+      name = 'RooWoo'
 
       service_instance = service_instance('trello_boards')
 
