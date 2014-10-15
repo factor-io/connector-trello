@@ -14,7 +14,7 @@ The Factor.io Trello connector gem is used to run actions in Trello through your
 
 First, you must generate an [application key](https://trello.com/1/appKey/generate) which will be listed as `key`.
 
-Afterwards, replace your application key, desired expiration date and optional particulars in the link below to create an authentication token:<br />
+Afterwards, replace your application key, desired expiration date and optional particulars in the link below and run in it your browser. This will create your authentication token.<br />
 `https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write`
 
 ##Functionality
