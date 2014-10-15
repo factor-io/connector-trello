@@ -12,10 +12,10 @@ The Factor.io Trello connector gem is used to run actions in Trello through your
 
 ##Authentication
 
-First, you must generate an [api_key](https://trello.com/1/appKey/generate) or application key.
+First, you must generate an [application key](https://trello.com/1/appKey/generate) which will be listed as 'key'.
 
-Afterwards, replace your information and particulars in the link below to create an auth_token or authentication token:<br />
-<https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write>
+Afterwards, replace your application key, desired expiration date and optional particulars in the link below to create an authentication token:<br />
+'https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write'
 
 ##Functionality
 
@@ -27,15 +27,15 @@ Afterwards, replace your information and particulars in the link below to create
 
 ####Lists
 • creating a list<br />
-• retreiving list information<br />
+• retrieving list information<br />
 
 ####Boards
 • creating a board<br />
-• retreiving board information<br />
+• retrieving board information<br />
 
 ####Members
-• retreiving member information<br />
-• assigning a member to a card
+• retrieving member information<br />
+• assigning a member to a card<br />
 
 ##Testing
 
