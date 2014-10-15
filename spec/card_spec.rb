@@ -45,12 +45,18 @@ describe 'trello_cards' do
 
     api_key = ENV['TRELLO_API_KEY']
     auth_token = ENV['TRELLO_AUTH_TOKEN']
+    member_id = ENV['TRELLO_MEMBER_ID']
+    board_id = @board.id
+    list_id = @list.id
     card_id = @card.id
 
     service_instance = service_instance('trello_cards')
 
     params = {
       'card_id' => card_id,
+      'list_id' => list_id,
+      'board_id' => board_id,
+      'member_id' => member_id,
       'auth_token' => auth_token,
       'api_key' => api_key
     }

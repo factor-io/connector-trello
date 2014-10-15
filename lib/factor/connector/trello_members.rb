@@ -5,10 +5,12 @@ Factor::Connector.service 'trello_members' do
   action 'find_member' do |params|
 
     member_id = params['member_id'] # username or ID
+    board_id = params['board_id'] # link ID or ID
+    card_id = params['card_id']
     api_key = params['api_key']
     auth_token = params['auth_token']
 
-    fail 'A member ID is required' unless member_id
+    fail 'A member ID, card ID or board ID is required' unless member_id || card_id || board_id
 
     info 'Initializing connection to Trello'
     begin
@@ -22,12 +24,20 @@ Factor::Connector.service 'trello_members' do
 
     info 'Finding member'
     begin
-      member = Trello::Member.find(member_id)
+      members = if member_id
+        Trello::Member.find(member_id)
+      elsif board_id
+        board = Trello::Board.find(board_id)
+        board.members
+      elsif card_id
+        card = Trello::Card.find(card_id)
+        card.members
+      end
     rescue
-      'Failed to find member'
+      fail 'Failed to find member'
     end
 
-    action_callback member
+    action_callback members
   end
   action 'add_member' do |params|
 
@@ -59,9 +69,9 @@ Factor::Connector.service 'trello_members' do
       else
         board.add_member(member)
         card.add_member(member)
-      endr
+      end
     rescue
-      'Failed to add member'
+      fail 'Failed to add member'
     end
 
     action_callback update

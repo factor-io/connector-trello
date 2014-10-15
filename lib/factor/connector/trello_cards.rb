@@ -1,6 +1,5 @@
 require 'factor-connector-api'
 require 'trello'
-require 'pry'
 
 Factor::Connector.service 'trello_cards' do
   action 'create_card' do |params|
@@ -41,10 +40,13 @@ Factor::Connector.service 'trello_cards' do
   action 'find_card' do |params|
 
     card_id = params['card_id']
+    list_id = params['list_id']
+    board_id = params['board_id']
+    member_id = params['member_id']
     api_key = params['api_key']
     auth_token = params['auth_token']
 
-    fail 'Card identification is required' unless card_id
+    fail 'Card, list, board or member identification is required' unless card_id || list_id || board_id || member_id
 
     info 'Initializing connection to Trello'
     begin
@@ -58,13 +60,25 @@ Factor::Connector.service 'trello_cards' do
 
     info 'Finding card'
     begin
-      card = Trello::Card.find(card_id)
+      cards = if card_id
+        Trello::Card.find(card_id)
+      elsif list_id
+        list = Trello::List.find(list_id)
+        list.cards
+      elsif board_id
+        board = Trello::Board.find(board_id)
+        board.cards
+      elsif member_id
+        member = Trello::Member.find(member_id)
+        member.cards
+      end
     rescue
       fail 'Failed to find specified card'
     end
 
-    action_callback card
+    action_callback cards
   end
+
   action 'move_card' do |params|
 
     card_id = params['card_id']
