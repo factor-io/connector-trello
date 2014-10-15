@@ -1,14 +1,14 @@
 Trello Connector for Factor.io
 ======================
 
-The Factor.io Trello connector gem is used to run actions in Trello through the command line. It was built with the [factor-connector-api](https://github.com/factor-io/connector-api) and [ruby-trello](https://github.com/jeremytregunna/ruby-trello) gems.
+The Factor.io Trello connector gem is used to run actions in Trello through your Factor.io workflow. It was built with the [factor-connector-api](https://github.com/factor-io/connector-api) and [ruby-trello](https://github.com/jeremytregunna/ruby-trello) gems.
 
 ##Authentication
 
 First, you must generate an [application key](https://trello.com/1/appKey/generate).
 
 Afterwards, replace your information and particulars in the link below to create an authentication token:<br />
-https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write
+<https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write>
 
 ##Functionality
 
