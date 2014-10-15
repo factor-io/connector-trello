@@ -23,6 +23,7 @@ Afterwards, replace your information and particulars in the link below to create
 • creating a card<br />
 • retrieving card information<br />
 • moving a card from one list to another<br />
+• deleting a card<br />
 
 ####Lists
 • creating a list<br />
@@ -39,5 +40,4 @@ Afterwards, replace your information and particulars in the link below to create
 ##Contributing
 
 Documentation, feature requests, code, tests, and bug reports are welcomed.<br />
-For more information on conributing check out:<br />
-https://github.com/factor-io/factor/wiki/Contribution
+Click [here](https://github.com/factor-io/factor/wiki/Contribution) for more information.<br />
