@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     factor-connector-trello (0.0.1)
-      factor-connector-api (~> 0.0.10)
+      factor-connector-api (~> 0.0.13)
 
 GEM
   remote: https://rubygems.org/
@@ -20,11 +20,11 @@ GEM
     builder (3.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    codeclimate-test-reporter (0.3.0)
+    codeclimate-test-reporter (0.4.1)
       simplecov (>= 0.7.1, < 1.0.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    factor-connector-api (0.0.10)
+    factor-connector-api (0.0.13)
       celluloid (~> 0.16.0)
     hitimes (1.2.2)
     i18n (0.6.11)
@@ -85,7 +85,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  codeclimate-test-reporter (~> 0.3.0)
+  codeclimate-test-reporter (~> 0.4.1)
   factor-connector-trello!
   rake (~> 10.3.2)
   rspec (~> 3.1.0)
