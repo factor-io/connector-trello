@@ -1,5 +1,6 @@
 require 'factor-connector-api'
 require 'trello'
+require 'rest-client'
 
 Factor::Connector.service 'trello_lists' do
   action 'create_list' do |params|
