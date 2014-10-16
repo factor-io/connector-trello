@@ -43,5 +43,25 @@ describe 'Trello' do
         expect_return
       end
     end
+    it 'can close a board' do
+
+      api_key = ENV['TRELLO_API_KEY']
+      auth_token = ENV['TRELLO_AUTH_TOKEN']
+      board_id = @board.id
+
+      service_instance = service_instance('trello_boards')
+
+      params = {
+        'board_id' => board_id,
+        'auth_token' => auth_token,
+        'api_key' => api_key
+      }
+
+      service_instance.test_action('close_board', params) do
+        expect_info message: 'Initializing connection to Trello'
+        expect_info message: 'Closing board'
+        expect_return
+      end
+    end
   end
 end

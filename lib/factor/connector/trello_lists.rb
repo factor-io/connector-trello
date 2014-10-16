@@ -1,5 +1,6 @@
 require 'factor-connector-api'
 require 'trello'
+require 'rest-client'
 
 Factor::Connector.service 'trello_lists' do
   action 'create_list' do |params|
@@ -63,5 +64,34 @@ Factor::Connector.service 'trello_lists' do
     end
 
     action_callback list
+  end
+
+  action 'close_list' do |params|
+
+    list_id = params['list_id']
+    api_key = params['api_key']
+    auth_token = params['auth_token']
+
+    fail 'List identification is required' unless list_id
+
+    info 'Initializing connection to Trello'
+    begin
+      Trello.configure do |config|
+        config.developer_public_key = api_key
+        config.member_token = auth_token
+      end
+    rescue
+      fail 'Authentication invalid'
+    end
+
+    info 'Closing list'
+    begin
+      list = Trello::List.find(list_id)
+      response = RestClient.put("https://trello.com/1/lists/#{list.id}/closed?key=#{api_key}&token=#{auth_token}",value:true)
+    rescue
+      fail 'Failed to close list'
+    end
+
+    action_callback response
   end
 end
