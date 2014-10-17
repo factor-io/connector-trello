@@ -1,8 +1,10 @@
 PATH
   remote: .
   specs:
-    factor-connector-trello (0.0.2)
+    factor-connector-trello (0.0.3)
       factor-connector-api (~> 0.0.13)
+      rest-client (~> 1.6.7)
+      ruby-trello (~> 1.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -88,7 +90,5 @@ DEPENDENCIES
   codeclimate-test-reporter (~> 0.4.1)
   factor-connector-trello!
   rake (~> 10.3.2)
-  rest-client (~> 1.6.7)
   rspec (~> 3.1.0)
-  ruby-trello (~> 1.1.1)
   wrong (~> 0.7.1)
