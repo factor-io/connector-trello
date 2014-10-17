@@ -18,7 +18,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('create_list', params) do
+      service_instance.test_action('create', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Creating new list'
         expect_return
@@ -39,7 +39,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('find_list', params) do
+      service_instance.test_action('find', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Retrieving list information'
         expect_return
@@ -60,7 +60,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('close_list', params) do
+      service_instance.test_action('close', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Closing list'
         expect_return

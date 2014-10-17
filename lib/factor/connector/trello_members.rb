@@ -1,8 +1,9 @@
 require 'factor-connector-api'
 require 'trello'
+require 'rest-client'
 
 Factor::Connector.service 'trello_members' do
-  action 'find_member' do |params|
+  action 'find' do |params|
 
     member_id = params['member_id'] # username or ID
     board_id = params['board_id'] # link ID or ID
@@ -39,7 +40,7 @@ Factor::Connector.service 'trello_members' do
 
     action_callback members
   end
-  action 'add_member' do |params|
+  action 'assign' do |params|
 
     member_id = params['member_id'] # username or ID
     card_id = params['card_id']
@@ -67,7 +68,8 @@ Factor::Connector.service 'trello_members' do
       update = if board.members.include? member
         card.add_member(member)
       else
-        board.add_member(member)
+        member_type = 'normal'
+        RestClient.put("https://trello.com/1/boards/#{board.id}/members/#{member.id}?key=#{api_key}&token=#{auth_token}",idMember:member.id, type:member_type)
         card.add_member(member)
       end
     rescue
