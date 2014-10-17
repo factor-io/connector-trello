@@ -2,7 +2,7 @@ require 'factor-connector-api'
 require 'trello'
 
 Factor::Connector.service 'trello_cards' do
-  action 'create_card' do |params|
+  action 'create' do |params|
 
     list_id = params['list_id']
     name = params['name']
@@ -37,7 +37,7 @@ Factor::Connector.service 'trello_cards' do
     action_callback card
   end
 
-  action 'find_card' do |params|
+  action 'find' do |params|
 
     card_id = params['card_id']
     list_id = params['list_id']
@@ -79,7 +79,7 @@ Factor::Connector.service 'trello_cards' do
     action_callback cards
   end
 
-  action 'move_card' do |params|
+  action 'move' do |params|
 
     card_id = params['card_id']
     list_two_id = params['list_two_id']
@@ -110,7 +110,7 @@ Factor::Connector.service 'trello_cards' do
     action_callback moved_card
   end
 
-  action 'delete_card' do |params|
+  action 'delete' do |params|
 
     card_id = params['card_id']
     api_key = params['api_key']

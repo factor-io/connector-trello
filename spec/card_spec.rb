@@ -18,7 +18,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('create_card', params) do
+      service_instance.test_action('create', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Creating new card'
         expect_return
@@ -45,7 +45,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('find_card', params) do
+      service_instance.test_action('find', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Finding card'
         expect_return
@@ -68,7 +68,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('move_card', params) do
+      service_instance.test_action('move', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Moving card'
         expect_return
@@ -89,7 +89,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('delete_card', params) do
+      service_instance.test_action('delete', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Deleting card'
         expect_return

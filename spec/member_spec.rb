@@ -20,7 +20,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('find_member', params) do
+      service_instance.test_action('find', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Finding member'
         expect_return
@@ -43,7 +43,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('add_member', params) do
+      service_instance.test_action('assign', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Adding member to card'
         expect_return

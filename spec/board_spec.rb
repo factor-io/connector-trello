@@ -16,7 +16,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('create_board', params) do
+      service_instance.test_action('create', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Creating new board'
         expect_return
@@ -37,7 +37,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('find_board', params) do
+      service_instance.test_action('find', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Finding board'
         expect_return
@@ -58,7 +58,7 @@ describe 'Trello' do
         'api_key' => api_key
       }
 
-      service_instance.test_action('close_board', params) do
+      service_instance.test_action('close', params) do
         expect_info message: 'Initializing connection to Trello'
         expect_info message: 'Closing board'
         expect_return

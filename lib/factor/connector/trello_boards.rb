@@ -3,7 +3,7 @@ require 'trello'
 require 'rest-client'
 
 Factor::Connector.service 'trello_boards' do
-  action 'create_board' do |params|
+  action 'create' do |params|
 
     name = params['name']
     api_key = params['api_key']
@@ -30,7 +30,7 @@ Factor::Connector.service 'trello_boards' do
 
     action_callback board
   end
-  action 'find_board' do |params|
+  action 'find' do |params|
 
     board_id = params['board_id']
     api_key = params['api_key']
@@ -57,7 +57,7 @@ Factor::Connector.service 'trello_boards' do
 
     action_callback board
   end
-  action 'close_board' do |params|
+  action 'close' do |params|
 
     board_id = params['board_id']
     api_key = params['api_key']

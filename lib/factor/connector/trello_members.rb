@@ -3,7 +3,7 @@ require 'trello'
 require 'rest-client'
 
 Factor::Connector.service 'trello_members' do
-  action 'find_member' do |params|
+  action 'find' do |params|
 
     member_id = params['member_id'] # username or ID
     board_id = params['board_id'] # link ID or ID
@@ -40,7 +40,7 @@ Factor::Connector.service 'trello_members' do
 
     action_callback members
   end
-  action 'add_member' do |params|
+  action 'assign' do |params|
 
     member_id = params['member_id'] # username or ID
     card_id = params['card_id']
