@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    factor-connector-trello (0.0.1)
+    factor-connector-trello (0.0.2)
       factor-connector-api (~> 0.0.13)
 
 GEM

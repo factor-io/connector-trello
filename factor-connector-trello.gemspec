@@ -3,7 +3,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = 'factor-connector-trello'
-  s.version       = '0.0.1'
+  s.version       = '0.0.2'
   s.platform      = Gem::Platform::RUBY
   s.authors       = ['Josie Wright']
   s.email         = ['jozwright@gmail.com']
