@@ -14,7 +14,7 @@ The Factor.io Trello connector gem is used to run actions in Trello through your
 
 First, you must generate an [application key](https://trello.com/1/appKey/generate) which will be listed as `key`.
 
-Afterwards, replace your application key, desired expiration date and optional particulars in the link below and run in it your browser. This will create your authentication token.
+Afterwards, replace your application key and other particulars in the link below. Your desired expiration date can be set to an amount of days or to `never`. Then, enter your customized link into a browser and it will create your authentication token.
 <br />
 <br />
 `https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write`
@@ -30,10 +30,12 @@ Afterwards, replace your application key, desired expiration date and optional p
 ####Lists
 • creating a list<br />
 • retrieving list information<br />
+• closing a list<br />
 
 ####Boards
 • creating a board<br />
 • retrieving board information<br />
+• closing a board<br />
 
 ####Members
 • retrieving member information<br />
@@ -41,13 +43,13 @@ Afterwards, replace your application key, desired expiration date and optional p
 
 ##Testing
 
-To test locally, you must set up three environmental variables:
+Using a command line to test locally, you must set up three environmental variables:
 
     $ export TRELLO_API_KEY=12345
     $ export TRELLO_AUTH_TOKEN=1234567890
     $ export TRELLO_MEMBER_ID=username
 
-Then, you can bundle and run the tests:
+Next, you can bundle and run the tests:
 
     $ bundle install
     $ rake
