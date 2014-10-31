@@ -1,4 +1,3 @@
-[![Code Climate](https://codeclimate.com/github/factor-io/connector-trello/badges/gpa.svg)](https://codeclimate.com/github/factor-io/connector-trello)
 [![Test Coverage](https://codeclimate.com/github/factor-io/connector-trello/badges/coverage.svg)](https://codeclimate.com/github/factor-io/connector-trello)
 [![Dependency Status](https://gemnasium.com/factor-io/connector-trello.svg)](https://gemnasium.com/factor-io/connector-trello)
 [![Build Status](https://travis-ci.org/factor-io/connector-trello.svg)](https://travis-ci.org/factor-io/connector-trello)
