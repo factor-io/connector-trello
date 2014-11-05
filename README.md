@@ -35,29 +35,13 @@ Afterwards, replace your application key and other particulars in the link below
 
 ##Configuration
 
-**[Setup your workflows](https://github.com/factor-io/connector-rackspace/wiki/Setup-your-workflows)**: To use the connector in your workflow when you run `factor s` you must setup your `credentials.yml` and `connectors.yml` files.
+**[Setup your workflows](https://github.com/factor-io/connector-trello/wiki/Setup-your-workflows)**: To use the connector in your workflow when you run `factor s` you must setup your `credentials.yml` and `connectors.yml` files.
 
 ##Functionality
 
-####Cards
-• creating a card<br />
-• retrieving card information<br />
-• moving a card from one list to another<br />
-• deleting a card<br />
+[example]
 
-####Lists
-• creating a list<br />
-• retrieving list information<br />
-• closing a list<br />
-
-####Boards
-• creating a board<br />
-• retrieving board information<br />
-• closing a board<br />
-
-####Members
-• retrieving member information<br />
-• assigning a member to a card<br />
+Further examples are provided in the **[Actions and Listeners](https://github.com/factor-io/connector-trello/wiki/Actions-and-Listeners)** wiki.
 
 ##Testing
 
