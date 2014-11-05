@@ -33,6 +33,10 @@ Afterwards, replace your application key and other particulars in the link below
 <br />
 `https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write`
 
+##Configuration
+
+**[Setup your workflows](https://github.com/factor-io/connector-rackspace/wiki/Setup-your-workflows)**: To use the connector in your workflow when you run `factor s` you must setup your `credentials.yml` and `connectors.yml` files.
+
 ##Functionality
 
 ####Cards
@@ -70,4 +74,4 @@ Next, you can bundle and run the tests:
 
 ##Contributing
 
-Documentation, feature requests, code, tests, and bug reports are welcomed. Click [here](https://github.com/factor-io/factor/wiki/Contribution) for more information.
+Documentation, feature requests, code, tests, and [bug reports](https://github.com/factor-io/connector-trello/issues/new) are welcomed. Click [here](https://github.com/factor-io/factor/wiki/Contribution) for more information.
