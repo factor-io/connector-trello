@@ -5,8 +5,8 @@ require 'rest-client'
 Factor::Connector.service 'trello_boards' do
   action 'create' do |params|
 
-    name = params['name']
-    api_key = params['api_key']
+    name       = params['name']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'A board name is required' unless name
@@ -32,8 +32,8 @@ Factor::Connector.service 'trello_boards' do
   end
   action 'find' do |params|
 
-    board_id = params['board_id']
-    api_key = params['api_key']
+    board_id   = params['board_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'A board board ID is required' unless board_id
@@ -59,8 +59,8 @@ Factor::Connector.service 'trello_boards' do
   end
   action 'close' do |params|
 
-    board_id = params['board_id']
-    api_key = params['api_key']
+    board_id   = params['board_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'Board identification is required' unless board_id

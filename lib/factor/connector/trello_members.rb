@@ -5,10 +5,10 @@ require 'rest-client'
 Factor::Connector.service 'trello_members' do
   action 'find' do |params|
 
-    member_id = params['member_id'] # username or ID
-    board_id = params['board_id'] # link ID or ID
-    card_id = params['card_id']
-    api_key = params['api_key']
+    member_id  = params['member_id'] # username or ID
+    board_id   = params['board_id'] # link ID or ID
+    card_id    = params['card_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'A member ID, card ID or board ID is required' unless member_id || card_id || board_id
@@ -42,9 +42,9 @@ Factor::Connector.service 'trello_members' do
   end
   action 'assign' do |params|
 
-    member_id = params['member_id'] # username or ID
-    card_id = params['card_id']
-    api_key = params['api_key']
+    member_id  = params['member_id'] # username or ID
+    card_id    = params['card_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'A member ID is required' unless member_id

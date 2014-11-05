@@ -5,9 +5,9 @@ require 'rest-client'
 Factor::Connector.service 'trello_lists' do
   action 'create' do |params|
 
-    board_id = params['board_id']
-    name = params['name']
-    api_key = params['api_key']
+    board_id   = params['board_id']
+    name       = params['name']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'Board identification is required' unless board_id
@@ -40,8 +40,8 @@ Factor::Connector.service 'trello_lists' do
 
   action 'find' do |params|
 
-    list_id = params['list_id']
-    api_key = params['api_key']
+    list_id    = params['list_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'List identification is required' unless list_id
@@ -67,8 +67,8 @@ Factor::Connector.service 'trello_lists' do
   end
   action 'close' do |params|
 
-    list_id = params['list_id']
-    api_key = params['api_key']
+    list_id    = params['list_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'List identification is required' unless list_id
