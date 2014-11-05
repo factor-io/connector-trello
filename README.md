@@ -47,14 +47,16 @@ Further examples are provided in the **[Actions and Listeners](https://github.co
 
 Using a command line to test locally, you must set up three environmental variables:
 
-    $ export TRELLO_API_KEY=12345
-    $ export TRELLO_AUTH_TOKEN=1234567890
-    $ export TRELLO_MEMBER_ID=username
-
+```shell
+$ export TRELLO_API_KEY=<api_key>
+$ export TRELLO_AUTH_TOKEN=<auth_token>
+$ export TRELLO_MEMBER_ID=<username>
+```
 Next, you can bundle and run the tests:
 
-    $ bundle install
-    $ rake
+```shell
+$ bundle exec rake
+```
 
 ##Contributing
 
