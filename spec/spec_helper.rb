@@ -1,6 +1,5 @@
 require "codeclimate-test-reporter"
 require 'rspec'
-require 'wrong'
 require 'factor-connector-api/test'
 require 'rest-client'
 

@@ -1,4 +1,3 @@
-[![Code Climate](https://codeclimate.com/github/factor-io/connector-trello/badges/gpa.svg)](https://codeclimate.com/github/factor-io/connector-trello)
 [![Test Coverage](https://codeclimate.com/github/factor-io/connector-trello/badges/coverage.svg)](https://codeclimate.com/github/factor-io/connector-trello)
 [![Dependency Status](https://gemnasium.com/factor-io/connector-trello.svg)](https://gemnasium.com/factor-io/connector-trello)
 [![Build Status](https://travis-ci.org/factor-io/connector-trello.svg)](https://travis-ci.org/factor-io/connector-trello)
@@ -10,6 +9,21 @@ Trello Connector for Factor.io
 
 The Factor.io Trello connector gem is used to run actions in Trello through your Factor.io workflow. It was built with the [factor-connector-api](https://github.com/factor-io/connector-api) and [ruby-trello](https://github.com/jeremytregunna/ruby-trello) gems.
 
+##Installation
+
+Add this to your `Gemfile` in your [connector](https://github.com/factor-io/connector).
+```ruby
+gem 'factor-connector-trello', '~> 0.0.4'
+```
+And the following to your `init.rb` file:
+```ruby
+require 'factor/connector/trello_boards'
+require 'factor/connector/trello_lists'
+require 'factor/connector/trello_cards'
+require 'factor/connector/trello_members'
+```
+Refer to the [setup documentation](https://github.com/factor-io/connector#running) to integrate it fully with your workflow.
+
 ##Authentication
 
 First, you must generate an [application key](https://trello.com/1/appKey/generate) which will be listed as `key`.
@@ -19,41 +33,31 @@ Afterwards, replace your application key and other particulars in the link below
 <br />
 `https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=1day&response_type=token&scope=read,write`
 
+##Configuration
+
+**[Setup your workflows](https://github.com/factor-io/connector-trello/wiki/Setup-your-workflows)**: To use the connector in your workflow when you run `factor s` you must setup your `credentials.yml` and `connectors.yml` files.
+
 ##Functionality
 
-####Cards
-• creating a card<br />
-• retrieving card information<br />
-• moving a card from one list to another<br />
-• deleting a card<br />
+[example]
 
-####Lists
-• creating a list<br />
-• retrieving list information<br />
-• closing a list<br />
-
-####Boards
-• creating a board<br />
-• retrieving board information<br />
-• closing a board<br />
-
-####Members
-• retrieving member information<br />
-• assigning a member to a card<br />
+Further examples are provided in the **[Actions and Listeners](https://github.com/factor-io/connector-trello/wiki/Actions-and-Listeners)** wiki.
 
 ##Testing
 
 Using a command line to test locally, you must set up three environmental variables:
 
-    $ export TRELLO_API_KEY=12345
-    $ export TRELLO_AUTH_TOKEN=1234567890
-    $ export TRELLO_MEMBER_ID=username
-
+```shell
+$ export TRELLO_API_KEY=<api_key>
+$ export TRELLO_AUTH_TOKEN=<auth_token>
+$ export TRELLO_MEMBER_ID=<username>
+```
 Next, you can bundle and run the tests:
 
-    $ bundle install
-    $ rake
+```shell
+$ bundle exec rake
+```
 
 ##Contributing
 
-Documentation, feature requests, code, tests, and bug reports are welcomed. Click [here](https://github.com/factor-io/factor/wiki/Contribution) for more information.
+Documentation, feature requests, code, tests, and [bug reports](https://github.com/factor-io/connector-trello/issues/new) are welcomed. Click [here](https://github.com/factor-io/factor/wiki/Contribution) for more information.

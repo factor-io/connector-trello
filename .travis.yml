@@ -7,3 +7,11 @@ env:
   - secure: WoYW4Hqneo+pVQAxhrx4s+Nk6R5CTe7c0Uu6JBQplUSbbgSVDWytgLZ0F8MUZPGXQpp2LSmTWUaugFl4fFybQf8+n/6cMWq/utvbBQdaScuuwuxv/2TXK4hdhyJYivFkDfc7EVonjKIAaLv85DTJto43OpH9/LtOAnofiR6lnBs=
   - secure: iBU2+OEKsf7Oa37hVGitjitTPsLCJTr4seuOmwqPtOwFWwFq2lxwlVByVqa+C/JftM/Kx6hxQ6JETaP2Jql7NYYqRKVp+hdzUEhQtsm0WEyiAF0MyQAqPniZhozqJbB0CHR4sZMqk/l+c7zetn4Rg+2irt+eZdAEtpGUKcFfc40=
   - secure: fJnIBFaoj7dDuOLhyJ3JC9BInNcLjVA6gluTCmxijjRwN3KRomNmwvaWXSHZoaZHNe2HWyvBiirqTBMLvJHXYDuvWXOB8O2gmrCTBG6Hk12WctqS5w+yZEdsMZ8odNJqEefid9wbv2OCv28Dloj7/zIbpmYUKnh7nBB0c0Y2ZqQ=
+deploy:
+  provider: rubygems
+  gem: factor-connector-trello
+  api_key:
+    secure: mMY5ZBtkbojnbXBLCnMpvdokLoJU+RbeafrQ3CZpOGXK4+mg8hoY79kdNIYNImF4bhOh3G0Ol0ByCsBGcciX1hknWLyrv8ZNNxlhoDLgTozcTIi8Zyd1SkRD360LUxGn5cDOgX+7o226zh6p2B742dVcgIf8Y469cGxT855DpBg=
+  on:
+    tags: true
+    all_branches: true

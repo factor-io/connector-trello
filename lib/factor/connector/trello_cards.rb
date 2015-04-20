@@ -4,9 +4,9 @@ require 'trello'
 Factor::Connector.service 'trello_cards' do
   action 'create' do |params|
 
-    list_id = params['list_id']
-    name = params['name']
-    api_key = params['api_key']
+    list_id    = params['list_id']
+    name       = params['name']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'List identification is required' unless list_id
@@ -39,11 +39,11 @@ Factor::Connector.service 'trello_cards' do
 
   action 'find' do |params|
 
-    card_id = params['card_id']
-    list_id = params['list_id']
-    board_id = params['board_id']
-    member_id = params['member_id']
-    api_key = params['api_key']
+    card_id    = params['card_id']
+    list_id    = params['list_id']
+    board_id   = params['board_id']
+    member_id  = params['member_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'Card, list, board or member identification is required' unless card_id || list_id || board_id || member_id
@@ -81,10 +81,10 @@ Factor::Connector.service 'trello_cards' do
 
   action 'move' do |params|
 
-    card_id = params['card_id']
+    card_id     = params['card_id']
     list_two_id = params['list_two_id']
-    api_key = params['api_key']
-    auth_token = params['auth_token']
+    api_key     = params['api_key']
+    auth_token  = params['auth_token']
 
     fail 'Card identification is required' unless card_id
     fail 'List identification is required' unless list_two_id
@@ -112,8 +112,8 @@ Factor::Connector.service 'trello_cards' do
 
   action 'delete' do |params|
 
-    card_id = params['card_id']
-    api_key = params['api_key']
+    card_id    = params['card_id']
+    api_key    = params['api_key']
     auth_token = params['auth_token']
 
     fail 'Card identification is required' unless card_id
